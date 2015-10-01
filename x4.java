@@ -34,7 +34,7 @@ void draw(){
   background( r,g,b);
   showButton( buttonX, buttonY, buttonW, buttonH);
   fill( 0, 242, 30); //baby blue
-  text("Press me", buttonX + buttonW / 4, buttonY + buttonH * 2/3);
+  text("hold H, has step 2", buttonX + buttonW / 4, buttonY + buttonH * 2/3);
 }
 //draw the button
 void showButton( float x , float y , float w, float h){
@@ -46,7 +46,23 @@ void showButton( float x , float y , float w, float h){
 
 void keyPressed(){
   if ( key == 'q') exit();
-  if ( key == 'r') background( 299, 0, 0); //red
+  if ( key == 'r'){
+    fill(255);
+    text("press h", 50,50);
+  };
+ if (key == 'h'){
+   counter = counter +1;
+   if (counter % 2 > 0) {
+      r = 0;
+      g = 0;
+      b = 227;
+      fill(255);
+      text("SQUEEZE THE BOX BOII", 100,100);
+      } 
+    else {
+      home();
+      }
+ } 
 }
 
 // action for button press
@@ -57,7 +73,7 @@ void mousePressed(){
       r = 0;
       g = 229;
       b = 227;
-      } 
+    }
     else {
       home();
       }
